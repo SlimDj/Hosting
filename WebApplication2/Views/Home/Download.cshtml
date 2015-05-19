@@ -1,0 +1,71 @@
+﻿@model WebApplication2.Models.FileEntity
+@using MVCVideo;
+@{
+    ViewBag.Title = "Скачать " + Model.Name;
+}
+@section scripts {
+    @Scripts.Render("~/Scripts/Default/file-download.js")
+
+}
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Имя:</h4>
+                <div>@Model.Name</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Описание:</h4>
+                <blockquote>@Model.Description</blockquote>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="well">
+                    <h4>Добавлен:</h4>
+                    @Model.DateTime.ToLongDateString() в @Model.DateTime.ToLongTimeString()
+                </div>
+                
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12 " id="lowpriority" style="display:none">
+                
+                <audio controls="controls">
+                    <source src="@Url.Content(Model.UrlPath)" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+        <br/>
+            <div class="row">
+               
+                <div class="col-md-2">
+                    <span class="btn btn-primary fileinput-button" id="downloadLink">
+                        <i class="glyphicon glyphicon-download"></i>
+                        <span>Download</span>
+                    </span>
+                    <p class="hidden" id="hidDocumentID">@Model.DownloadLink</p>
+                    <p class="hidden" id="hidDocumentID2">@Model.MimeType</p>
+                </div>
+            </div>
+
+        </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-6 " id="lowpriority2" style="display:none;  ">
+                <div class="push"></div>
+                <img style="max-width: 800px" src="@Url.Content(Model.UrlPath)" alt="альтернативный текст">
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+
+

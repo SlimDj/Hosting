@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0b3ccba8-7f57-4501-9608-5133d4a6c592}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>ModelingProject2</Name>
+    <RootNamespace>ModelingProject2</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="AccountController_AccountController.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AccountController_AccountController.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AccountController_AccountController.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="AccountController_Login.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AccountController_Login.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AccountController_Login.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="AccountController_Register.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AccountController_Register.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AccountController_Register.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="HomeController_HomeController.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="HomeController_HomeController.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>HomeController_HomeController.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="HomeController_SaveUploadedFile.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="HomeController_SaveUploadedFile.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>HomeController_SaveUploadedFile.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="HomeController_Search.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="HomeController_Search.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>HomeController_Search.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\ModelingProject2.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

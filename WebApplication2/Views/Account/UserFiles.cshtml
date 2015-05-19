@@ -1,0 +1,45 @@
+﻿@model PagedList.IPagedList<WebApplication2.Models.FileViewModel>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = User.Identity.Name+" User files";
+}
+<br/>
+<ul class="breadcrumb">
+    <li class="active">Мои файлы</li>
+    <li>@Html.ActionLink("Настройки", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Управление" })</li>
+</ul>
+
+<h2>Мои файлы</h2>
+<p>Всего файлов: @ViewBag.Count</p> 
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            <p>Name</p>
+        </th>
+        <th>
+            <p>Actions</p>
+        </th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+           
+        </td>
+        
+        <td>
+            <a href="/Edit/@item.Id">Edit</a> |
+            <a href="/Download/@item.DownloadLink">Details</a>   |
+            @Html.ActionLink("Delete", "Delete","Home", new { id=item.Id },null)
+        </td>
+    </tr>
+}
+
+</table>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("UserFiles", "Account",
+    new { page}))

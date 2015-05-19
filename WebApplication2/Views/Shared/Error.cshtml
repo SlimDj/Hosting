@@ -1,0 +1,11 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Ошибка";
+}
+
+<h1 class="text-danger">Ошибка.</h1>
+<h2 class="text-danger">При обработке запроса произошла ошибка.</h2>
+<p>@Model.ActionName</p>
+<p>@Model.ControllerName</p>
+<p>@Model.Exception</p>

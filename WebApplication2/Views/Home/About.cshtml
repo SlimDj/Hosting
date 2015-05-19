@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<button class="btn-default  btn" data-target="#modalId" data-toggle="modal" type="button">
+    This button will trigger modal
+</button>
+<div class="modal fade" id="modalId" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Header!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Body of the Modal.</p>
+                <p>This could be any html markup.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-default  btn" type="button">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/dropzonescss")
+    @Scripts.Render("~/bundles/modernizr")
+    
+   
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                @Html.ActionLink("My Little Hosting", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="divider"></li>
+                    
+                    <li class="divider"></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+                <div class="navbar-form">
+                    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+                    {
+                        <div class="input-group left" style="width:300px">
+                            <input type="text" class="form-control" placeholder="Search for..." name="searchTerm">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                        </div><!-- /input-group -->
+                    }
+                </div><!-- /.nav-form -->
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year – File Hosting Servise / @Html.ActionLink("Контакт", "Contact", "Home")</p> 
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/dropzonescripts")
+    @Scripts.Render("~/Scripts/Default/Search.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="About" Bounds="14.1280346171061,7.67179201761881,50,23.2766666666667" UseManualLocation="True" />
+    <Node Id="Download" Bounds="-399.666675720215,7.63325231084923,68.0699999999999,23.2766666666667" UseManualLocation="True" />
+    <Node Id="Edit" Bounds="-391.583335876465,73.186785642751,50,23.2766666666667" UseManualLocation="True" />
+    <Node Id="ExternalLogin" Bounds="-171.568278751262,69.5938653381089,85.6433333333333,23.2766666666666" UseManualLocation="True" />
+    <Node Id="Index" Bounds="-96.6666666666667,-129.000000012716,50,23.2766666666667" Label="Index" UseManualLocation="True" />
+    <Node Id="Link" Bounds="-390.960372186811,-62.944173537418,50,23.2766666666667" UseManualLocation="True" />
+    <Node Id="Login" Bounds="-155.425298716227,8.41415690104168,50,23.2766666666666" UseManualLocation="True" />
+    <Node Id="Manage" Bounds="-264.505924144575,71.2790468375418,58.0266666666666,23.2766666666667" UseManualLocation="True" />
+    <Node Id="Register" Bounds="-75.4252987162272,9.5250501505534,59.5533333333333,23.2766666666666" UseManualLocation="True" />
+    <Node Id="Search" Bounds="-262.195316607123,-66.2832756706901,52.8666666666667,23.2766666666667" UseManualLocation="True" />
+    <Node Id="UserFiles" Bounds="-269.081047070821,7.56762313842773,66.7766666666666,23.2766666666667" Label="User Files" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="Index" Target="About" Bounds="-62.2319036118273,-105.723334299723,86.2575856771927,106.40381739356" />
+    <Link Source="Index" Target="Login" Bounds="-121.910220072342,-105.723334299723,45.2669757607518,105.862285543013" />
+    <Link Source="Index" Target="Register" Bounds="-69.4807307669855,-105.723334299723,19.9848183978491,106.4030508631" />
+    <Link Source="Index" Target="Search" Bounds="-201.23917993094,-107.855739257243,104.700708215963,40.0162887051424" />
+    <Link Source="Index" Target="UserFiles" Bounds="-214.797874442679,-105.723334299723,129.152861334349,107.532302477061" />
+    <Link Source="Link" Target="Download" Bounds="-365.906156217082,-39.6675081125895,0.178372793576955,38.3008585580548" />
+    <Link Source="Login" Target="ExternalLogin" Bounds="-130.105957371967,31.6908235677083,0.793151508678477,28.9064278006124" />
+    <Link Source="Login" Target="UserFiles" Bounds="-193.304676172569,19.5468297283864,37.879377456342,0.304616647714202" />
+    <Link Source="Search" Target="Download" Bounds="-337.361553345347,-43.0066099039713,81.1512836790652,46.1880000637589" />
+    <Link Source="Search" Target="UserFiles" Bounds="-235.751063362567,-43.0066099039714,0.0389895968470171,41.5742360338758" />
+    <Link Source="UserFiles" Target="Download" Bounds="-322.596669238835,19.2228195699144,53.5156173996424,0.0270301250707767" />
+    <Link Source="UserFiles" Target="Edit" Bounds="-335.613717301185,30.8442888387044,76.7060025260608,38.4548856140768" />
+    <Link Source="UserFiles" Target="Manage" Bounds="-235.656160654086,30.8442888387044,0.0987417024182093,31.4348023994592" />
+  </Links>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Метка" Description="Отображаемая метка аннотируемого объекта" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Комментарий" ValueLabel="Имеет комментарий">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

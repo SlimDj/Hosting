@@ -1,0 +1,52 @@
+﻿@model PagedList.IPagedList<WebApplication2.Models.FileViewModel>
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@section scripts {
+    @Scripts.Render("~/Scripts/Default/Search.js")
+}
+
+<div class="push"></div>
+<div id="filesList">
+    <div class="row">
+        <div class="col-md-12">
+           <h3>Результаты поиска по запросу: "@ViewBag.Term".</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Найдено: @ViewBag.Count </h4>
+        </div>
+    </div>
+    <hr />
+    <table class="table table-striped">
+        
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr class="row">
+                    <td class="col-md-10">
+                        <a 
+                           href="/Download/@item.DownloadLink">
+                            <h5>@item.Name</h5>
+                        </a>
+                    </td>
+                    <td class="col-md-2">
+                        <h4> @Html.DisplayFor(modelItem => item.User)</h4>
+                    </td>
+                    <td class="col-md-2">
+                        <h5>@item.DateAdded</h5>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<hr />
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Search","Home",
+    new { page, searchTerm = ViewBag.Term }))
